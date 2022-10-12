@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Bienvenidos a Porcentajes MP</h1>
+    <h2>En esta pagina podras calcular el valor del interes sobre nuestro productos en stock segun el medio de pago que elijas.</h2>
+    <h3>Podes elegir pagar con Point, Qr o Link de pago. Dentro de estas opciones podras pagar con tarjeta de debito o credito.</h3>
+
+    <label for="monto">Ingrese el monto:</label>
+    <input id="monto" size="6" />  
+
+    <label for="tarjeta">Ingrese la tarjeta:</label>
+    <select name="tarjeta" id="tarjeta">
+        <option value="credito">Credito</option>
+        <option value="debito">Debito</optin>
+    </select>
+
+    <label for="medioDePago">Medio de pago:</label>
+    <select name="medioDePago" id="medioDePago">
+        <option value="qr">Qr</option>
+        <option value="point">Point</option>
+        <option value="link">Link de pago</option>
+    </select>
+
+    <button id="btnInteres">Calcular interes</button>
+
+    <div id="interes"></div>
+    <div id="contenedor"></div>
+
+    <script src="/Porcentajes - Operadores avanzados/index.js"></script>
+</body>
+</html>
