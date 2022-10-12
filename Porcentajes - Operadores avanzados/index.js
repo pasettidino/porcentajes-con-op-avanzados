@@ -68,10 +68,10 @@ let productList = [
 	},
     {
 		name: "Buzo Hombre",
-		//price: 5000,
+		price: 5000,
 	},
     {
-		//name: "Buzo Cavaliers",
+		name: "Buzo Cavaliers",
 		price: 5000,
 	},
 ].forEach((e) => {
@@ -80,15 +80,6 @@ let productList = [
 	id++;
 });
 
-//productos.push(new Producto(productos.length + 1, "Musculosa Miami Heat", 8000));
-/*
-let newProduct = new Producto(productos.length + 1, "Short Lakers", 7500)
-productos = [...productos, newProduct]
-//productos.push(new Producto(productos.length + 1, "Short Lakers", 7500));
-productos.push(new Producto(productos.length + 1, "Musculosa Denver - Campazzo", 11000));
-productos.push(new Producto(productos.length + 1, "Camiseta seleccion Argentina", 5000));
-productos.push(new Producto(productos.length + 1, "Buzo Cavaliers", 12000));*9/
-console.log(productos);*/
 localStorage.setItem("Articulos", JSON.stringify(productos));
 
 productos.forEach((producto) => {
@@ -112,4 +103,14 @@ function calcularInteres() {
 		parseInt(monto) + porcentaje(parseInt(monto), valorMetodoDePago, valorTarjeta);
 }
 
+
+
 document.getElementById("btnInteres").addEventListener("click", calcularInteres);
+
+btnInteres.addEventListener("click", () => {
+    Toastify({
+        text: "This is a toast",
+        duration: 3000 
+        }).showToast();
+    });
+
