@@ -109,8 +109,11 @@ document.getElementById("btnInteres").addEventListener("click", calcularInteres)
 
 btnInteres.addEventListener("click", () => {
     Toastify({
-        text: "This is a toast",
-        duration: 3000 
+        text:  `Porcentaje calculado`,
+        duration: 3000,
+		style: {
+			background: "linear-gradient(to right, #4E9BCA, #43EFEF)"
+		  },
         }).showToast();
     });
 
