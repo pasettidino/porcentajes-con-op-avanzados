@@ -40,80 +40,45 @@ class Producto {
 	}
 }
 
-let contenedor = document.getElementById("contenedor");
+fetch("data.json")
+	.then((e) => e.json())
+	.then((e) => {
+		let contenedor = document.getElementById("contenedor");
+		let productos = [];
+		productos = e;
 
-let id = 0;
-let productos = [];
+		console.log(productos);
+		localStorage.setItem("Articulos", JSON.stringify(productos));
+		productos.forEach((producto) => {
+			let item = document.createElement("div");
+			item.innerHTML = ` 
+			<h2>Id: ${producto.id} </h2>
+			<h3> Producto: ${producto.nombre} </h3>
+			<b>$${producto.precio} </b>
+		`;
+			contenedor.append(item);
+		});
 
-let productList = [
-	{
-		name: "Musculosa Miami Heat",
-		price: 8000,
-	},
-    {
-		name: "Short Lakers",
-		price: 7500,
-	},
-    {
-		name: "Musculosa Denver - Campazzo",
-		price: 11000,
-	},
-    {
-		name: "Camiseta seleccion Argentina",
-		price: 5000,
-	},
-    {
-		name: "Buzo Cavaliers",
-		price: 5000,
-	},
-    {
-		name: "Buzo Hombre",
-		price: 5000,
-	},
-    {
-		name: "Buzo Cavaliers",
-		price: 5000,
-	},
-].forEach((e) => {
-	let newProduct = new Producto(id, e?.name ?? " Producto sin nombre", e?.price ?? " Precio no disponible");
-	productos = [...productos, newProduct];
-	id++;
-});
+		function calcularInteres() {
+			let tarjeta = document.getElementById("tarjeta");
+			let valorTarjeta = tarjeta.options[tarjeta.selectedIndex].value;
+			let metodoDePago = document.getElementById("medioDePago");
+			let valorMetodoDePago = metodoDePago.options[metodoDePago.selectedIndex].value;
+			let monto = document.getElementById("monto").value;
 
-localStorage.setItem("Articulos", JSON.stringify(productos));
+			document.getElementById("interes").innerHTML =
+				parseInt(monto) + porcentaje(parseInt(monto), valorMetodoDePago, valorTarjeta);
+		}
 
-productos.forEach((producto) => {
-	let item = document.createElement("div");
-	item.innerHTML = ` 
-        <h2>Id: ${producto.id} </h2>
-        <h3> Producto: ${producto.nombre} </h3>
-        <b>$${producto.precio} </b>
-    `;
-	contenedor.append(item);
-});
+		document.getElementById("btnInteres").addEventListener("click", calcularInteres);
 
-function calcularInteres() {
-	let tarjeta = document.getElementById("tarjeta");
-	let valorTarjeta = tarjeta.options[tarjeta.selectedIndex].value;
-	let metodoDePago = document.getElementById("medioDePago");
-	let valorMetodoDePago = metodoDePago.options[metodoDePago.selectedIndex].value;
-	let monto = document.getElementById("monto").value;
-
-	document.getElementById("interes").innerHTML =
-		parseInt(monto) + porcentaje(parseInt(monto), valorMetodoDePago, valorTarjeta);
-}
-
-
-
-document.getElementById("btnInteres").addEventListener("click", calcularInteres);
-
-btnInteres.addEventListener("click", () => {
-    Toastify({
-        text:  `Porcentaje calculado`,
-        duration: 3000,
-		style: {
-			background: "linear-gradient(to right, #4E9BCA, #43EFEF)"
-		  },
-        }).showToast();
-    });
-
+		btnInteres.addEventListener("click", () => {
+			Toastify({
+				text: `Porcentaje calculado`,
+				duration: 3000,
+				style: {
+					background: "linear-gradient(to right, #4E9BCA, #43EFEF)",
+				},
+			}).showToast();
+		});
+	});
