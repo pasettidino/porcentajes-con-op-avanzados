@@ -51,10 +51,12 @@ fetch("data.json")
 		localStorage.setItem("Articulos", JSON.stringify(productos));
 		productos.forEach((producto) => {
 			let item = document.createElement("div");
-			item.innerHTML = ` 
+			item.innerHTML = `
+			<div class = "d-flex gap-2 w-100 justify-content-between"> 
 			<h2>Id: ${producto.id} </h2>
 			<h3> Producto: ${producto.nombre} </h3>
 			<b>$${producto.precio} </b>
+			</div>
 		`;
 			contenedor.append(item);
 		});

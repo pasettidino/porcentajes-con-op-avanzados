@@ -2,36 +2,43 @@
     {
         "id": 0,
         "nombre": "Musculosa Miami Heat",
-        "precio": 8000
+        "precio": 8000,
+        "img": "../imagenes/buzocleveland.jpg"
     },
     {
         "id": 1,
         "nombre": "Short Lakers",
-        "precio": 7500
+        "precio": 7500,
+        "img":
     },
     {
         "id": 2,
         "nombre": "Musculosa Denver - Campazzo",
-        "precio": 11000
+        "precio": 11000,
+        "img":
     },
     {
         "id": 3,
         "nombre": "Camiseta seleccion Argentina",
-        "precio": 5000
+        "precio": 5000,
+        "img":
     },
     {
         "id": 4,
         "nombre": "Buzo Cavaliers",
-        "precio": 5000
+        "precio": 5000,
+        "img":
     },
     {
         "id": 5,
-        "nombre": "Buzo Hombre",
-        "precio": 5000
+        "nombre": "Buzo Hombre Jordan",
+        "precio":  7500,
+        "img":
     },
     {
         "id": 6,
-        "nombre": "Buzo Cavaliers",
-        "precio": 5000
+        "nombre": "Buzo Memphis",
+        "precio": 4300,
+        "img":
     }
 ]
