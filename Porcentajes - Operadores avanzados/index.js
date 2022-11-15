@@ -52,10 +52,15 @@ fetch("data.json")
 		productos.forEach((producto) => {
 			let item = document.createElement("div");
 			item.innerHTML = `
-			<div class = "d-flex gap-2 w-100 justify-content-between"> 
-			<h2>Id: ${producto.id} </h2>
-			<h3> Producto: ${producto.nombre} </h3>
-			<b>$${producto.precio} </b>
+			<div class = "d-flex gap-2 w-100"> 
+					<div style="    background-image: url(${producto?.img});    background-repeat: no-repeat;
+							background-size: 10em;
+							width: 10em;
+							height: 10em;"
+					> </div>
+				<h2>Id: ${producto.id} </h2>
+				<h3> Producto: ${producto.nombre} </h3>
+				<b>$${producto.precio} </b>
 			</div>
 		`;
 			contenedor.append(item);
