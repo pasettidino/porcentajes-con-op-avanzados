@@ -51,17 +51,15 @@ fetch("data.json")
 		localStorage.setItem("Articulos", JSON.stringify(productos));
 		productos.forEach((producto) => {
 			let item = document.createElement("div");
-			item.innerHTML = `
-			<div class = "d-flex gap-2 w-100"> 
-					<div style="    background-image: url(${producto?.img});    background-repeat: no-repeat;
-							background-size: 10em;
-							width: 10em;
-							height: 10em;"
-					> </div>
-				<h2>Id: ${producto.id} </h2>
-				<h3> Producto: ${producto.nombre} </h3>
-				<b>$${producto.precio} </b>
-			</div>
+			item.classList.add("col-md-4")
+			item.innerHTML = `	
+				<div class="card" style="width: 18rem;margin: 10px;">		
+					<h2>Id: ${producto.id} </h2>
+					<div style="background-image: url(${producto?.img});" class="ropaImg"> </div>
+					<h3> Producto: ${producto.nombre} </h3>
+					<b>$${producto.precio} </b>
+					<p class="price">$300.00</p>
+				</div>			
 		`;
 			contenedor.append(item);
 		});

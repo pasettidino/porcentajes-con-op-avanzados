@@ -3,3 +3,9 @@
     padding: 20px;
 }
 
+.ropaImg {
+	background-repeat: no-repeat;
+	background-size: 7em;
+	width: 7em;
+	height: 7em;
+}
